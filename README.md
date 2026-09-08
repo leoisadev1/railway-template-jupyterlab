@@ -15,7 +15,7 @@ Keep the token private. Anyone with it can run code and access this service's fi
 
 The base image is `quay.io/jupyter/scipy-notebook:2026-09-07`, pinned to `sha256:ec7343ba248a7473c42322e86e7157bef9ebc9253c40a88e573b3fcf607a9a8a`.
 
-The inherited image entrypoint starts as root to repair volume ownership, then runs Jupyter as `jovyan`, UID 1000. The wrapper rejects a root notebook process. Leave `RAILWAY_RUN_UID` unset. No passwordless sudo is granted.
+The upstream startup helper starts as root to repair volume ownership, then runs Jupyter as `jovyan`, UID 1000. The wrapper invokes this helper even when Railway overrides the image entrypoint, and rejects configuration that requests a root notebook user. Leave `RAILWAY_RUN_UID` unset. No passwordless sudo is granted.
 
 | Path | Lifetime |
 | --- | --- |
