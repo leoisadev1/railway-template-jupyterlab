@@ -1,4 +1,6 @@
-# JupyterLab with persistent scientific Python
+# JupyterLab notebooks on Railway
+
+The current template release is `v1.0.1`. It deploys [JupyterLab](https://jupyter.org) from the [Jupyter Docker Stacks](https://github.com/jupyter/docker-stacks) scipy-notebook image.
 
 [JupyterLab](https://jupyter.org/) with NumPy, pandas, SciPy, matplotlib, and scikit-learn on Railway. This single-user template builds a small wrapper over the official scipy-notebook image, pinned by version and digest.
 
@@ -13,7 +15,7 @@ Keep the token private. Anyone with it can run code and access this service's fi
 
 ## Runtime and storage
 
-The base image is `quay.io/jupyter/scipy-notebook:2026-09-07`, pinned to `sha256:ec7343ba248a7473c42322e86e7157bef9ebc9253c40a88e573b3fcf607a9a8a`.
+The base image is `quay.io/jupyter/scipy-notebook:2026-11-23`, pinned to `sha256:21b93d2df02daa665b11442282d01f96d5a639e8ca9045cfd296e2896709b2fc`. It ships JupyterLab 4.6.6, Notebook 7.6.5 and Jupyter Server 2.21.1 on Python 3.13.
 
 The upstream startup helper starts as root to repair volume ownership, then runs Jupyter as `jovyan`, UID 1000. The wrapper invokes this helper even when Railway overrides the image entrypoint, and rejects configuration that requests a root notebook user. Leave `RAILWAY_RUN_UID` unset. No passwordless sudo is granted.
 

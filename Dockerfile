@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/scipy-notebook:2026-09-07@sha256:ec7343ba248a7473c42322e86e7157bef9ebc9253c40a88e573b3fcf607a9a8a
+FROM quay.io/jupyter/scipy-notebook:2026-11-23@sha256:21b93d2df02daa665b11442282d01f96d5a639e8ca9045cfd296e2896709b2fc
 
 # The upstream startup helper fixes volume ownership, then drops to jovyan.
 USER root
